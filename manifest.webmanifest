@@ -1,0 +1,18 @@
+{
+  "name": "TXT Pets",
+  "short_name": "TXT Pets",
+  "description": "TXT pet companion for iPad.",
+  "start_url": "./ipad.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f4efe7",
+  "theme_color": "#f4efe7",
+  "icons": [
+    {
+      "src": "./build/icon.ico",
+      "sizes": "64x64 128x128 256x256",
+      "type": "image/x-icon"
+    }
+  ]
+}

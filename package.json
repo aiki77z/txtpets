@@ -1,0 +1,78 @@
+{
+  "name": "txt-pets",
+  "version": "1.0.1",
+  "private": true,
+  "description": "Electron desktop pet shell wired to five finalized TXT pet atlases.",
+  "author": "TXT Pets",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron .",
+    "serve:ipad": "python -m http.server 4173 --bind 0.0.0.0",
+    "dist:win": "electron-builder --win --x64 --publish never",
+    "dist:mac": "electron-builder --mac dmg zip"
+  },
+  "devDependencies": {
+    "electron": "22.3.27",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.txt.desktoppets",
+    "productName": "TXT Pets",
+    "directories": {
+      "output": "dist"
+    },
+    "npmRebuild": false,
+    "files": [
+      "app.js",
+      "build/icon.ico",
+      "build/icon.icns",
+      "index.html",
+      "main.js",
+      "package.json",
+      "pet-data.js",
+      "preload.js",
+      "styles.css",
+      "hwangchoon/hatch-run/final/spritesheet.webp",
+      "choiyongmeong/hatch-run/final/spritesheet.webp",
+      "bamgeut/hatch-run/final/spritesheet.webp",
+      "dagonyang/hatch-run/final/spritesheet.webp",
+      "hhmnyaring/hatch-run/final/spritesheet.webp"
+    ],
+    "extraResources": [
+      {
+        "from": "build/icon.ico",
+        "to": "icon.ico"
+      },
+      {
+        "from": "build/icon.icns",
+        "to": "icon.icns"
+      }
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "icon": "build/icon.ico"
+    },
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "icon": "build/icon.icns",
+      "category": "public.app-category.entertainment"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "artifactName": "TXT-Pets-win11-Setup-${version}.${ext}"
+    },
+    "portable": {
+      "artifactName": "TXT-Pets-win11-${version}.${ext}"
+    }
+  }
+}

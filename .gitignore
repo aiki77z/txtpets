@@ -1,0 +1,51 @@
+# Node / Electron
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build outputs
+dist/
+out/
+release/
+*.blockmap
+builder-debug.yml
+builder-effective-config.yaml
+
+# Runtime state
+window-state.json
+chat-state.json
+
+# OS / editor
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*.tmp
+*.temp
+*.bak
+*.log
+.vscode/
+.idea/
+
+# Raw/generated pet working folders stay local.
+hatch-runs/
+hatchrun/
+reference/
+*/reference/
+
+# Only keep the final spritesheets required by Windows/macOS packaging.
+*/hatch-run/*
+!*/hatch-run/final/
+!*/hatch-run/final/spritesheet.webp
+
+# Source icon drops stay local; packaged icons live in build/.
+icon_mac.icns
+icon_windows.ico
+riize_logo_mac.icns
+riize_logo_windows.ico
+
+# Archives
+*.zip
