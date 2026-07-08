@@ -270,6 +270,12 @@ function jumpOffsetForFrame(frame, frameCount, scale) {
   return -Math.round(22 * scale * arc);
 }
 
+function drawingScaleForAction(maxScale) {
+  const baseScale = maxScale >= 1 ? Math.floor(maxScale) || 1 : maxScale;
+  if (state.action !== "jumping") return baseScale;
+  return Math.min(baseScale, maxScale * 0.81);
+}
+
 function drawPlaceholder(message) {
   petCtx.clearRect(0, 0, petCanvas.width, petCanvas.height);
   petCtx.fillStyle = "#ffffff";
@@ -289,7 +295,7 @@ function drawFrame(now, image) {
     petCanvas.width / ATLAS.cellWidth,
     petCanvas.height / ATLAS.cellHeight
   );
-  const scale = maxScale >= 1 ? Math.floor(maxScale) || 1 : maxScale;
+  const scale = drawingScaleForAction(maxScale);
   const dw = Math.round(ATLAS.cellWidth * scale);
   const dh = Math.round(ATLAS.cellHeight * scale);
   const dx = Math.round((petCanvas.width - dw) / 2);
