@@ -38,9 +38,6 @@ reference/
 
 # Only keep the final spritesheets required by Windows/macOS packaging.
 */hatch-run/*
-!*/hatch-run/final/
-!*/hatch-run/final/spritesheet.webp
-
 # Source icon drops stay local; packaged icons live in build/.
 icon_mac.icns
 icon_windows.ico
